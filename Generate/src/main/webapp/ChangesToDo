@@ -1,0 +1,28 @@
+When a new entry is added it checks whether the map exceeds the capacity size and
+then it will remove the least recently used data(session) from map.
+
+    LRU HashMap works
+    
+    *HashMap for Fast Access
+    *Ordering Mechanism for Access History
+    *Eviction Policy
+    *insert, delete and lookup O(1) 
+    
+    MAX_ACTIVES + 1: 
+
+This sets the initial capacity of the LinkedHashMap. 
+The "+ 1" is due to the custom removal that allows for an extra entry before removal happens.
+
+ -0.75F: This sets the load factor, which is a measure of how full the map is allowed to get before its capacity is automatically increased. 
+ This value indicates that the map is allowed to be 75% full before its is increased.
+ access order
+ accessing the eldest entry 
+ 
+ This implementation ensures that when a new session is added and the maximum number of active sessions has been reached, 
+ the oldest session is handled and removed from the map based on the custom eviction policy defined in the "removeEldestEntry" method.
+
+ Servlets (Login, SignUp, and SessionFilter):
+ Utility Classes (DbUtils and SessionUtils):
+ 
+ periodic updation using SchedulerExecutiveService 
+ 
