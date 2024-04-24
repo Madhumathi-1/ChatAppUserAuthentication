@@ -1,0 +1,64 @@
+/* Your CSS styles for the website */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	background-color: #333;
+	color: #fff;
+	padding: 15px;
+}
+
+.navbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar ul li {
+	display: inline;
+	margin-right: 20px;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+.profile-section {
+	margin-top: 20px;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+}
+
+.profile img {
+	width: 150px;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+
+.details {
+	flex: 1;
+}
+
+.social-links img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #555;
+}

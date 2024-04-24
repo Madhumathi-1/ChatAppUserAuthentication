@@ -1,0 +1,78 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "proto";
+package proto;
+
+enum TableColumn {
+  USER_ID = 0;
+  USERNAME = 2;
+  FIRST_NAME = 3;
+  LAST_NAME = 4;
+  DOB = 5;
+  CREATE_TIME_MS = 6;
+  CHANGE_TIME_MS = 7;
+
+  EMAIL_ID = 8;
+  EMAIL_USER_ID = 9;
+  EMAIL_ADDRESS = 10;
+  EMAIL_CREATION_TIME_MS = 11;
+  EMAIL_CHANGE_TIME_MS = 12;
+
+  PASSWORD_ID = 13;
+  PASSWORD_USER_ID = 14;
+  PASSWORD_HASH = 15;
+  PASSWORD_CREATION_TIME_MS = 16;
+  PASSWORD_LAST_CHANGE_TIME_MS = 17;
+
+  SESSION_ID = 18;
+  SESSION_CREATION_TIME = 19;
+  SESSION_LAST_ACTIVITY_TIME = 20;
+  SESSION_USER_ID = 21;
+}
+
+message Column {
+  TableColumn name = 1;
+  string value = 2;
+}
+
+message User {
+  int32 user_id = 1;
+  string username = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string dob = 5;
+  int64 create_time_ms = 6;
+  int64 change_time_ms = 7;
+}
+
+message TableData {
+  string table_name = 1;
+  repeated Column columns = 2;
+}
+
+message Email {
+  int32 email_id = 8;
+  int32 user_id = 9;
+  string email_address = 10;
+  int64 creation_time_ms = 11;
+  int64 change_time_ms = 12;
+}
+
+message Password {
+  int32 password_id = 13;
+  int32 user_id = 14;
+  string password_hash = 15;
+  int64 creation_time_ms = 16;
+  int64 last_change_time_ms = 17;
+}
+
+message Sessions {
+  string session_id = 18;
+  int64 session_creation_time = 19;
+  int64 session_last_activity_time = 20;
+  int32 user_id = 21;
+}
+
+message UserTableData {
+  TableData data = 1;
+}
