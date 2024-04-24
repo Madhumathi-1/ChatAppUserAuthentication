@@ -1,0 +1,17 @@
+"INSERT INTO User (username, first_name, last_name, dob, create_time_ms, change_time_ms) VALUES (?, ?, ?, ?, ?, ?)";
+
+"INSERT INTO Email (user_id, email_address, creation_time_ms, change_time_ms) VALUES (?, ?, ?, ?)";
+
+"INSERT INTO Password (user_id, password_hash, creation_time_ms, last_change_time_ms) VALUES (?, ?, ?, ?)";
+
+"SELECT user_id FROM User WHERE username = ?";
+ 
+"UPDATE User SET username = ?, first_name = ?, last_name = ?, dob = ?, 
+change_time_ms = ? WHERE user_id = ?";
+
+SELECT User.user_id FROM User INNER JOIN Password ON User.user_id = Password.user_id "+ "WHERE User.username = ? AND Password.password_hash = ?";
+
+"SELECT * FROM User WHERE username = ?";
+	
+"SELECT email_address FROM Email e JOIN User u ON e.user_id = u.user_id WHERE u.username = ?";
+
